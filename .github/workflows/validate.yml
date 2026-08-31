@@ -1,0 +1,19 @@
+name: Validate marketplace
+
+on:
+  pull_request:
+    paths: ['marketplace.json']
+  push:
+    branches: [main]
+    paths: ['marketplace.json']
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/market-validate.mjs marketplace.json --remote
