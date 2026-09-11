@@ -1,3 +1,5 @@
 {
-	"plugins": []
+	"plugins": [
+		{ "type": "repo", "url": "github.com/hongweifei/sveltecms-plugin-comments" }
+	]
 }
